@@ -1,0 +1,56 @@
+body {
+  font-family: 'Walter Turncoat', cursive;
+  background-image: url("images/seigaiha.png");
+}
+h1, p, .button {
+  color: #D70060;
+  letter-spacing: 2px;
+}
+.container {
+  max-width: 80%;
+  height: 100vh;
+  margin: auto;
+}
+
+.img-container, .info-container {
+  max-width: 70%;
+  margin: auto;
+}
+
+.img-container {
+  height: 50vh;
+}
+
+.info-container {
+  padding-top: 5%;
+}
+
+h1 {
+  text-align: center;
+}
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  border: solid 10px #D70060;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.button {
+  text-align: center;
+  font-size: 1.5em;
+  border: solid 2px #D70060;
+  max-width: 50%;
+  display: block;
+  padding: 10px;
+  margin: 30px auto;
+  user-select: none;
+}
+
+.button:hover {
+  color: #FFF;
+  background: #D70060;
+  cursor: pointer;
+}
