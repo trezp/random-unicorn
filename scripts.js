@@ -1,10 +1,10 @@
 (function(){
   var unicornFrame  = document.getElementById('unicornFrame'),
       button        = document.getElementById('printRandomUnicorn'),
-      name          = document.getElementById('unicorn-name'),
+      //name          = document.querySelector('h1'),
       infoContainer = document.getElementById('info-container'),
-      img           = document.getElementById('img');
-
+      img           = document.getElementById('img'),
+      body          = document.querySelector('body');
 
   function getUniqueUnicorn(){
     var randNum,
@@ -24,18 +24,31 @@
     return uniqueUnicorns[randNum];
   }
 
+  function getRandomColor(colors){
+    var randNum = Math.floor(Math.random() * colors.length);
+    return colors[randNum];
+  }
+
   function printRandomUnicorn(){
-    var unicorn = getUniqueUnicorn();
+    var unicorn = getUniqueUnicorn(),
+        randColor = getRandomColor(colors);
+
     console.log(unicorn.name);
     //take this unicorn out of the list of eligible unicorns
     unicorn.duplicate = true;
 
-    name.innerHTML = unicorn.name + " the Unicorn";
+    //name.innerHTML = unicorn.name + " the Unicorn";
     img.src = 'images/' + unicorn.image;
-    infoContainer.innerHTML = '<p>Age: ' + unicorn.age + '</p>';
-    infoContainer.innerHTML += '<p>Favorite Dessert: ' + unicorn.dessert + '</p>'
+    infoContainer.innerHTML = '<h2>' + unicorn.name + ' the Unicorn</h2>';
+    infoContainer.innerHTML += '<p>Age: ' + unicorn.age + '</p>';
+    infoContainer.innerHTML += '<p>Favorite Dessert: ' + unicorn.dessert + '</p>';
 
+    body.style.color = randColor;
+    img.style.borderColor = randColor;
+    button.style.backgroundColor = randColor;
+    button.style.borderColor = randColor;
   }
 
   button.addEventListener('click', printRandomUnicorn);
+  setInterval(printRandomUnicorn, 5000);
 }());

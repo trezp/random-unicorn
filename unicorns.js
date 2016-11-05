@@ -56,3 +56,5 @@ var unicorns = [
     duplicate: false
   }
 ]
+
+var colors = ["#F8B701","#FC8C05","#02A08D","#170135","#FA005E","#F8B701","#FC8C05","#02A08D"];
