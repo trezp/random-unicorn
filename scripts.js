@@ -1,7 +1,6 @@
 (function(){
   var unicornFrame  = document.getElementById('unicornFrame'),
       button        = document.getElementById('printRandomUnicorn'),
-      //name          = document.querySelector('h1'),
       infoContainer = document.getElementById('info-container'),
       img           = document.getElementById('img'),
       body          = document.querySelector('body');
@@ -26,6 +25,7 @@
 
   function getRandomColor(colors){
     var randNum = Math.floor(Math.random() * colors.length);
+    console.log(randNum);
     return colors[randNum];
   }
 
@@ -49,6 +49,12 @@
     button.style.borderColor = randColor;
   }
 
-  button.addEventListener('click', printRandomUnicorn);
-  setInterval(printRandomUnicorn, 5000);
+  function autoUnicorn(){
+    setInterval(printRandomUnicorn, 5000);
+  }
+
+  button.addEventListener('click', function(){
+    printRandomUnicorn();
+  });
+  setInterval(printRandomUnicorn, 12000);
 }());
